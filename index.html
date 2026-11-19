@@ -1,0 +1,1131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAKE UR DAY BETTER AND GET BETTER BY MALIK</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg:#090910;
+  --panel:#11111c;
+  --panel2:#171726;
+  --border:#272638;
+  --text:#f5f3ff;
+  --muted:#9290a8;
+  --purple:#9b78ff;
+  --purple2:#7445ed;
+  --green:#52d6a0;
+  --red:#ff6685;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ background:var(--bg);color:var(--text);
+ font-family:'DM Sans',sans-serif;min-height:100vh;
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.4;cursor:not-allowed}
+.hidden{display:none!important}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.gradient{
+ background:linear-gradient(110deg,#c3a7ff,#8959ff);
+ -webkit-background-clip:text;background-clip:text;color:transparent
+}
+.btn{
+ border:0;border-radius:11px;padding:11px 16px;
+ background:var(--purple2);color:white;font-weight:700;
+ transition:.2s
+}
+.btn:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.btn.secondary{background:var(--panel2);border:1px solid var(--border)}
+.btn.danger{background:#52202f;color:#ff9cb0}
+.btn.success{background:#174a3a;color:#80eac0}
+.btn.smallbtn{padding:7px 10px;font-size:12px}
+input,textarea,select{
+ width:100%;padding:13px 14px;border-radius:11px;
+ background:#0d0d17;border:1px solid var(--border);
+ color:var(--text);outline:none;
+}
+input:focus,textarea:focus,select:focus{border-color:var(--purple)}
+textarea{resize:vertical}
+label{font-size:13px;color:#c7c2d9;display:block;margin-bottom:7px}
+.field{margin-bottom:16px}
+a{color:var(--purple);cursor:pointer}
+.auth{
+ min-height:100vh;display:flex;align-items:center;
+ justify-content:center;padding:20px;
+ background:radial-gradient(ellipse at 50% 10%,#302052 0%,#11101d 35%,#090910 75%);
+}
+.authbox{
+ width:100%;max-width:440px;background:#11111ceF;
+ border:1px solid var(--border);border-radius:23px;
+ padding:35px;box-shadow:0 25px 100px #0008;
+}
+.logo{font-family:'Outfit';font-size:31px;font-weight:800;letter-spacing:2px}
+.logo span{color:var(--purple)}
+.authbox h2{font-size:24px;margin:28px 0 7px}
+.authbox .btn{width:100%;padding:14px;margin-top:4px}
+.authswitch{text-align:center;font-size:13px;margin-top:22px;color:var(--muted)}
+.authswitch a{font-weight:700}
+.notice{font-size:11px;color:var(--muted);margin-top:20px;line-height:1.6}
+.error{color:#ff8298;font-size:12px;margin-bottom:12px;min-height:16px}
+.app{min-height:100vh}
+.topbar{
+ height:72px;position:sticky;top:0;z-index:10;
+ display:flex;align-items:center;justify-content:space-between;
+ padding:0 5%;background:#090910ed;
+ border-bottom:1px solid var(--border);backdrop-filter:blur(15px)
+}
+.topbar .logo{font-size:23px}
+.userarea{display:flex;align-items:center;gap:12px}
+.avatar{
+ width:38px;height:38px;border-radius:50%;display:grid;
+ place-items:center;background:linear-gradient(135deg,#b28bff,#7040df);
+ font-weight:800
+}
+.layout{
+ max-width:1200px;margin:auto;padding:30px 22px 70px;
+ display:grid;grid-template-columns:220px minmax(0,1fr);gap:27px
+}
+.sidebar{position:sticky;top:95px;height:max-content}
+.sideheading{font-size:10px;color:var(--muted);letter-spacing:2px;margin:15px 12px}
+.nav{
+ display:flex;align-items:center;gap:12px;width:100%;
+ padding:13px 14px;border:0;background:transparent;color:var(--muted);
+ text-align:left;border-radius:11px;margin:4px 0;font-weight:600
+}
+.nav:hover,.nav.active{background:#211b36;color:#c9b5ff}
+.nav .ico{font-size:18px;width:22px}
+.content{min-width:0}
+.page{display:none}
+.page.active{display:block}
+.welcome{
+ display:flex;align-items:flex-start;justify-content:space-between;
+ gap:15px;margin:5px 0 24px;flex-wrap:wrap
+}
+.welcome h1{font-family:'Outfit';font-size:30px;margin-bottom:6px}
+.panel{
+ background:var(--panel);border:1px solid var(--border);
+ border-radius:17px;padding:20px;margin-bottom:19px;
+}
+.paneltitle{font-size:16px;font-weight:700;margin-bottom:15px}
+.hero{
+ position:relative;overflow:hidden;
+ background:linear-gradient(120deg,#271b43,#17152a 60%,#11111c);
+ border:1px solid #40305e;border-radius:18px;
+ padding:24px;margin-bottom:20px
+}
+.hero:after{
+ content:"✦";position:absolute;right:35px;top:4px;
+ font-size:100px;color:#ffffff0b
+}
+.hero h2{font-family:'Outfit';font-size:24px;margin:12px 0 7px}
+.hero p{font-size:13px;color:#c1b5db;max-width:490px;line-height:1.7}
+.stats{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;
+ margin-bottom:20px
+}
+.stat{
+ background:var(--panel);border:1px solid var(--border);
+ border-radius:15px;padding:17px;min-width:0
+}
+.staticon{font-size:20px;margin-bottom:13px}
+.statnum{font-family:'Outfit';font-size:26px;font-weight:800}
+.statlabel{font-size:11px;color:var(--muted);margin-top:4px}
+.timerbox{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:15px;flex-wrap:wrap
+}
+.timer{
+ font-family:'Outfit';font-size:26px;font-weight:800;
+ color:#c3a7ff;letter-spacing:2px
+}
+.progress{height:8px;border-radius:20px;background:#292638;overflow:hidden}
+.progress>div{
+ height:100%;width:0%;background:linear-gradient(90deg,#7545e8,#c09cff);
+ border-radius:20px;transition:width .3s
+}
+.taskinput{display:flex;gap:9px;margin-bottom:17px}
+.taskinput input{flex:1;min-width:0}
+.task{
+ display:flex;align-items:center;gap:12px;padding:13px 11px;
+ border-bottom:1px solid #ffffff0b;transition:.2s
+}
+.task:last-child{border:0}
+.taskcheck{
+ width:21px;height:21px;flex-shrink:0;accent-color:var(--purple);
+ cursor:pointer
+}
+.taskname{flex:1;font-size:14px;overflow-wrap:anywhere}
+.task.done .taskname{text-decoration:line-through;color:#77758c}
+.taskactions{display:flex;gap:5px}
+.iconbtn{
+ border:0;background:transparent;color:var(--muted);
+ padding:6px;border-radius:7px
+}
+.iconbtn:hover{background:#2b253e;color:white}
+.empty{
+ text-align:center;padding:32px 10px;color:var(--muted);font-size:13px
+}
+.empty .big{font-size:32px;margin-bottom:10px}
+.quote{font-size:16px;line-height:1.7;font-family:'Outfit';color:#ddd2ff}
+.quoteauthor{font-size:11px;color:var(--muted);margin-top:10px}
+.moods{display:flex;gap:9px;flex-wrap:wrap}
+.mood{
+ flex:1;min-width:65px;padding:12px 5px;
+ background:#171725;border:1px solid var(--border);
+ color:var(--muted);border-radius:11px;text-align:center
+}
+.mood span{display:block;font-size:23px;margin-bottom:5px}
+.mood.selected{border-color:var(--purple);background:#29203e;color:white}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.historyitem{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:12px;padding:15px 0;border-bottom:1px solid #ffffff0c
+}
+.historyitem:last-child{border:0}
+.historydate{font-size:14px;font-weight:700}
+.historymeta{font-size:11px;color:var(--muted);margin-top:5px}
+.status{font-size:11px;padding:6px 9px;border-radius:20px;background:#252433}
+.status.complete{background:#153b30;color:#78e7b7}
+.status.missed{background:#48202e;color:#ff9bb0}
+.calendar{
+ display:grid;grid-template-columns:repeat(7,1fr);gap:7px
+}
+.calday{
+ aspect-ratio:1;border-radius:8px;background:#1a1926;
+ display:grid;place-items:center;font-size:11px;color:var(--muted)
+}
+.calday.complete{background:#225a43;color:#a2f5c9}
+.calday.missed{background:#502538;color:#ffb0c1}
+.calday.today{outline:2px solid var(--purple);color:white}
+.weekbar{
+ display:flex;align-items:flex-end;justify-content:space-around;
+ height:145px;padding-top:15px
+}
+.weekcol{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;flex:1}
+.weektrack{height:105px;width:18px;border-radius:10px;background:#242235;display:flex;align-items:flex-end;overflow:hidden}
+.weekfill{width:100%;background:linear-gradient(#c4a4ff,#7544e9);border-radius:10px}
+.weekday{font-size:10px;color:var(--muted)}
+.weeknum{font-size:10px;color:#c9b7ff}
+.profileline{display:flex;justify-content:space-between;gap:15px;padding:15px 0;border-bottom:1px solid var(--border);font-size:13px}
+.toast{
+ position:fixed;bottom:25px;right:25px;background:#252039;
+ border:1px solid #57437c;padding:14px 19px;border-radius:12px;
+ z-index:30;box-shadow:0 10px 40px #0008;font-size:13px;
+ animation:pop .2s ease
+}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.modalbg{
+ position:fixed;inset:0;background:#000a;z-index:25;
+ display:flex;align-items:center;justify-content:center;padding:20px
+}
+.modal{
+ width:100%;max-width:500px;background:var(--panel);
+ border:1px solid var(--border);border-radius:18px;padding:23px
+}
+.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+footer{text-align:center;color:#666477;font-size:11px;padding:20px}
+@media(max-width:850px){
+ .layout{grid-template-columns:1fr}
+ .sidebar{position:static;display:flex;overflow-x:auto;gap:5px}
+ .sideheading{display:none}
+ .nav{width:auto;white-space:nowrap;padding:11px}
+ .nav .ico{width:auto}
+ .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+ .topbar{padding:0 15px}
+ .topbar .logo{font-size:19px}
+ .layout{padding:20px 13px 50px}
+ .welcome h1{font-size:25px}
+ .two{grid-template-columns:1fr}
+ .panel{padding:15px}
+ .authbox{padding:24px}
+ .timer{font-size:23px}
+ .taskinput{flex-wrap:wrap}
+ .taskinput .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- AUTHENTICATION -->
+<section id="auth" class="auth">
+ <div class="authbox">
+  <div class="logo">BETTER<span>DAY.</span></div>
+  <div id="loginForm">
+   <h2>Welcome back.</h2>
+   <p class="muted small" style="margin-bottom:23px">Your next chapter starts today.</p>
+   <div class="error" id="loginError"></div>
+   <div class="field">
+    <label>Username</label>
+    <input id="loginUser" placeholder="Enter your username" autocomplete="username">
+   </div>
+   <div class="field">
+    <label>Password</label>
+    <input id="loginPass" type="password" placeholder="Enter your password" autocomplete="current-password">
+   </div>
+   <button class="btn" onclick="login()">Sign in →</button>
+   <div class="authswitch">New here? <a onclick="showSignup()">Create an account</a></div>
+  </div>
+  <div id="signupForm" class="hidden">
+   <h2>Create your account.</h2>
+   <p class="muted small" style="margin-bottom:23px">A little better, every single day.</p>
+   <div class="error" id="signupError"></div>
+   <div class="field">
+    <label>Your name</label>
+    <input id="signupName" placeholder="What should we call you?">
+   </div>
+   <div class="field">
+    <label>Username</label>
+    <input id="signupUser" placeholder="Choose a username" autocomplete="username">
+   </div>
+   <div class="field">
+    <label>Password</label>
+    <input id="signupPass" type="password" placeholder="At least 6 characters" autocomplete="new-password">
+   </div>
+   <div class="field">
+    <label>Confirm password</label>
+    <input id="signupConfirm" type="password" placeholder="Enter your password again">
+   </div>
+   <button class="btn" onclick="signup()">Create account →</button>
+   <div class="authswitch">Already have an account? <a onclick="showLogin()">Sign in</a></div>
+  </div>
+  <p class="notice">Your account data is stored in this browser using localStorage. This is a personal demo, not a secure online authentication service. Passwords are not encrypted, and accounts do not sync across devices.</p>
+ </div>
+</section>
+
+<!-- MAIN APP -->
+<div id="app" class="app hidden">
+ <header class="topbar">
+  <div class="logo">BETTER<span>DAY.</span></div>
+  <div class="userarea">
+   <div style="text-align:right">
+    <div id="topUsername" style="font-weight:700;font-size:13px"></div>
+    <div class="muted small">Your personal space</div>
+   </div>
+   <div class="avatar" id="avatar">B</div>
+   <button class="btn secondary smallbtn" onclick="logout()">Log out</button>
+  </div>
+ </header>
+
+ <div class="layout">
+  <aside class="sidebar">
+   <div class="sideheading">MENU</div>
+   <button class="nav active" data-page="dashboard" onclick="go('dashboard')"><span class="ico">⌂</span> Dashboard</button>
+   <button class="nav" data-page="tasks" onclick="go('tasks')"><span class="ico">☑</span> Daily goals</button>
+   <button class="nav" data-page="history" onclick="go('history')"><span class="ico">◷</span> History</button>
+   <button class="nav" data-page="statistics" onclick="go('statistics')"><span class="ico">▥</span> Statistics</button>
+   <button class="nav" data-page="profile" onclick="go('profile')"><span class="ico">♙</span> My profile</button>
+  </aside>
+
+  <main class="content">
+   <!-- DASHBOARD -->
+   <section id="dashboard" class="page active">
+    <div class="welcome">
+     <div>
+      <h1 id="greeting">Good day!</h1>
+      <p class="muted small" id="todayDate"></p>
+     </div>
+     <span class="status complete">✦ Your fresh start</span>
+    </div>
+
+    <div class="hero">
+     <span class="small" style="color:#c5a9ff;font-weight:700;letter-spacing:1px">YOUR DAILY REMINDER</span>
+     <h2>Become 1% better today.</h2>
+     <p>You don't need to change your whole life today. Just make one small promise to yourself, and keep it.</p>
+     <button class="btn" style="margin-top:17px" onclick="go('tasks')">View my goals →</button>
+    </div>
+
+    <div class="stats">
+     <div class="stat"><div class="staticon">🔥</div><div class="statnum" id="dashStreak">0</div><div class="statlabel">Current streak</div></div>
+     <div class="stat"><div class="staticon">🏆</div><div class="statnum" id="dashBest">0</div><div class="statlabel">Best streak</div></div>
+     <div class="stat"><div class="staticon">✓</div><div class="statnum" id="dashDone">0</div><div class="statlabel">Goals completed</div></div>
+     <div class="stat"><div class="staticon">📅</div><div class="statnum" id="dashDays">1</div><div class="statlabel">Lists created</div></div>
+    </div>
+
+    <div class="panel">
+     <div class="timerbox">
+      <div>
+       <div class="paneltitle" style="margin:0 0 6px">Next daily reset</div>
+       <div class="muted small">Your next list becomes available in:</div>
+      </div>
+      <div class="timer" id="countdown">24:00:00</div>
+     </div>
+     <div class="progress" style="margin-top:17px"><div id="timerProgress"></div></div>
+     <div class="muted small" style="margin-top:9px" id="timerCaption">Your 24-hour journey has started.</div>
+    </div>
+
+    <div class="two">
+     <div class="panel">
+      <div class="paneltitle">Today's progress</div>
+      <div style="display:flex;justify-content:space-between;margin-bottom:10px">
+       <span class="muted small">Completed goals</span><b id="dashPercent">0%</b>
+      </div>
+      <div class="progress"><div id="dashProgress"></div></div>
+      <p class="muted small" id="dashTaskText" style="margin-top:13px">Start adding your goals!</p>
+     </div>
+     <div class="panel">
+      <div class="paneltitle">Daily inspiration ✦</div>
+      <div class="quote" id="quote"></div>
+      <div class="quoteauthor">— YOUR BETTERDAY REMINDER</div>
+      <button class="iconbtn small" onclick="newQuote()" style="margin-top:12px">↻ New quote</button>
+     </div>
+    </div>
+
+    <div class="panel">
+     <div class="paneltitle">How are you feeling today?</div>
+     <div class="moods" id="moods">
+      <button class="mood" onclick="setMood('Amazing','🤩',this)"><span>🤩</span>Amazing</button>
+      <button class="mood" onclick="setMood('Happy','😊',this)"><span>😊</span>Happy</button>
+      <button class="mood" onclick="setMood('Okay','😐',this)"><span>😐</span>Okay</button>
+      <button class="mood" onclick="setMood('Tired','😴',this)"><span>😴</span>Tired</button>
+      <button class="mood" onclick="setMood('Stressed','😣',this)"><span>😣</span>Stressed</button>
+     </div>
+     <p class="muted small" id="moodMessage" style="margin-top:12px"></p>
+    </div>
+   </section>
+
+   <!-- TASKS -->
+   <section id="tasks" class="page">
+    <div class="welcome">
+     <div><h1>My daily goals ✦</h1><p class="muted small">Make today count. One task at a time.</p></div>
+     <span class="status" id="taskDate"></span>
+    </div>
+    <div class="panel">
+     <div class="timerbox">
+      <div><div class="paneltitle" style="margin:0 0 5px">Time remaining</div><p class="muted small">Your list resets exactly 24 hours after it starts.</p></div>
+      <div class="timer" id="taskCountdown">24:00:00</div>
+     </div>
+     <div class="progress" style="margin-top:16px"><div id="taskProgress"></div></div>
+     <p class="muted small" id="taskPercent" style="margin-top:8px">0% completed</p>
+    </div>
+
+    <div class="panel">
+     <div class="paneltitle">Add something to your day</div>
+     <div class="taskinput">
+      <input id="newTask" placeholder="What do you want to accomplish today?" maxlength="120" onkeydown="if(event.key==='Enter')addTask()">
+      <button class="btn" onclick="addTask()">+ Add goal</button>
+     </div>
+     <div id="taskList"></div>
+     <div id="taskEmpty" class="empty">
+      <div class="big">✦</div>
+      <b>Your list is waiting for you.</b><br>Add your first goal above.
+     </div>
+    </div>
+
+    <div class="panel">
+     <div class="paneltitle">A little reminder</div>
+     <p class="muted small" style="line-height:1.8">Your goals belong to you. You can change them whenever you want during your current 24-hour period. Once the timer ends, your next daily list will begin. Your previous list will be saved in history.</p>
+     <button class="btn secondary smallbtn" onclick="editLast()">✎ Edit last list</button>
+    </div>
+   </section>
+
+   <!-- HISTORY -->
+   <section id="history" class="page">
+    <div class="welcome"><div><h1>My history</h1><p class="muted small">Look how far you've come.</p></div></div>
+    <div class="panel">
+     <div class="paneltitle">Daily calendar</div>
+     <div class="muted small" id="calendarMonth" style="margin-bottom:14px"></div>
+     <div class="calendar" id="calendar"></div>
+     <div class="muted small" style="margin-top:14px">🟩 Completed &nbsp; 🟥 Missed &nbsp; 🟪 Today</div>
+    </div>
+    <div class="panel">
+     <div class="paneltitle">Previous daily lists</div>
+     <div id="historyList"></div>
+     <div id="historyEmpty" class="empty">Your completed days will appear here.</div>
+    </div>
+   </section>
+
+   <!-- STATISTICS -->
+   <section id="statistics" class="page">
+    <div class="welcome"><div><h1>Your statistics</h1><p class="muted small">Every little effort adds up.</p></div></div>
+    <div class="stats">
+     <div class="stat"><div class="staticon">🔥</div><div class="statnum" id="statStreak">0</div><div class="statlabel">Current streak</div></div>
+     <div class="stat"><div class="staticon">⭐</div><div class="statnum" id="statBest">0</div><div class="statlabel">Best streak</div></div>
+     <div class="stat"><div class="staticon">✓</div><div class="statnum" id="statTasks">0</div><div class="statlabel">Total completed</div></div>
+     <div class="stat"><div class="staticon">📆</div><div class="statnum" id="statCompleted">0</div><div class="statlabel">Successful days</div></div>
+    </div>
+    <div class="panel">
+     <div class="paneltitle">Your last 7 days</div>
+     <div class="weekbar" id="weekChart"></div>
+    </div>
+    <div class="panel">
+     <div class="paneltitle">Your achievements</div>
+     <div id="achievements" class="two"></div>
+    </div>
+   </section>
+
+   <!-- PROFILE -->
+   <section id="profile" class="page">
+    <div class="welcome"><div><h1>My profile</h1><p class="muted small">Your personal BETTERDAY account.</p></div></div>
+    <div class="panel" style="text-align:center;padding:35px 20px">
+     <div class="avatar" style="width:70px;height:70px;font-size:26px;margin:0 auto 15px" id="profileAvatar">B</div>
+     <h2 id="profileName"></h2>
+     <p class="muted small" id="profileUsername"></p>
+     <p class="muted small" id="joinDate" style="margin-top:9px"></p>
+    </div>
+    <div class="panel">
+     <div class="paneltitle">Account information</div>
+     <div class="profileline"><span class="muted">Name</span><b id="infoName"></b></div>
+     <div class="profileline"><span class="muted">Username</span><b id="infoUsername"></b></div>
+     <div class="profileline"><span class="muted">Member since</span><b id="infoDate"></b></div>
+     <div class="profileline"><span class="muted">Total lists</span><b id="infoLists"></b></div>
+     <button class="btn secondary" style="margin-top:17px" onclick="openEditProfile()">Edit profile</button>
+    </div>
+    <div class="panel">
+     <div class="paneltitle">Account actions</div>
+     <button class="btn danger" onclick="logout()">Log out of account</button>
+    </div>
+   </section>
+  </main>
+ </div>
+ <footer>BETTERDAY © 2026 · A little better, every day.</footer>
+</div>
+
+<!-- MODAL -->
+<div id="modalBg" class="modalbg hidden" onclick="if(event.target===this)closeModal()">
+ <div class="modal">
+  <div class="modalhead"><h3 id="modalTitle">Edit</h3><button class="iconbtn" onclick="closeModal()">✕</button></div>
+  <div id="modalContent"></div>
+ </div>
+</div>
+<div id="toast" class="toast hidden"></div>
+
+<script>
+// ==========================================
+// BETTERDAY - LOCAL ACCOUNT & DATA SYSTEM
+// ==========================================
+
+const DB_KEY = 'betterday_accounts_v1';
+const SESSION_KEY = 'betterday_session_v1';
+const PERIOD = 24 * 60 * 60 * 1000;
+
+let currentUser = null;
+let quoteIndex = 0;
+let timerInterval = null;
+let toastTimeout = null;
+
+const quotes = [
+ "Small steps every day lead to big changes.",
+ "You don't have to be perfect. You just have to keep going.",
+ "Your future is created by what you do today.",
+ "Progress is progress, no matter how small.",
+ "Make yourself proud, one promise at a time.",
+ "A new day means a new opportunity.",
+ "Don't compare your chapter one to someone else's chapter twenty.",
+ "The secret is to start before you're ready.",
+ "Consistency beats perfection.",
+ "One day or day one. You decide.",
+ "Be patient with yourself. You're growing.",
+ "Your only competition is who you were yesterday.",
+ "You are allowed to start over as many times as you need.",
+ "The best investment is the effort you put into yourself."
+];
+
+function getDB(){
+ try{return JSON.parse(localStorage.getItem(DB_KEY))||{}}
+ catch(e){return {}}
+}
+function saveDB(db){localStorage.setItem(DB_KEY,JSON.stringify(db))}
+function saveUser(){
+ if(!currentUser)return;
+ const db=getDB();
+ db[currentUser.username]=currentUser;
+ saveDB(db);
+}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function dateString(ms=Date.now()){
+ const d=new Date(ms);
+ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function niceDate(ms){
+ return new Date(ms).toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+}
+function escapeHTML(s){
+ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function showToast(message){
+ const el=document.getElementById('toast');
+ el.textContent=message;el.classList.remove('hidden');
+ clearTimeout(toastTimeout);
+ toastTimeout=setTimeout(()=>el.classList.add('hidden'),2600);
+}
+
+// ==========================================
+// AUTH
+// ==========================================
+
+function showSignup(){
+ document.getElementById('loginForm').classList.add('hidden');
+ document.getElementById('signupForm').classList.remove('hidden');
+}
+function showLogin(){
+ document.getElementById('signupForm').classList.add('hidden');
+ document.getElementById('loginForm').classList.remove('hidden');
+}
+function signup(){
+ const name=document.getElementById('signupName').value.trim();
+ const username=document.getElementById('signupUser').value.trim().toLowerCase();
+ const pass=document.getElementById('signupPass').value;
+ const confirm=document.getElementById('signupConfirm').value;
+ const error=document.getElementById('signupError');
+ error.textContent='';
+ if(!name||!username||!pass||!confirm){error.textContent='Please fill in every field.';return}
+ if(!/^[a-z0-9_]{3,20}$/.test(username)){error.textContent='Username must be 3–20 characters (letters, numbers or _).';return}
+ if(pass.length<6){error.textContent='Password must be at least 6 characters.';return}
+ if(pass!==confirm){error.textContent='Passwords do not match.';return}
+ const db=getDB();
+ if(db[username]){error.textContent='That username is already taken.';return}
+ const now=Date.now();
+ currentUser={
+  name,username,password:pass,joinedAt:now,
+  active:{id:uid(),createdAt:now,dueAt:now+PERIOD,tasks:[]},
+  history:[],moods:{},bestStreak:0
+ };
+ db[username]=currentUser;saveDB(db);
+ localStorage.setItem(SESSION_KEY,username);
+ startApp();
+ showToast('Welcome to BETTERDAY, '+name+'! ✦');
+}
+function login(){
+ const username=document.getElementById('loginUser').value.trim().toLowerCase();
+ const pass=document.getElementById('loginPass').value;
+ const error=document.getElementById('loginError');
+ const user=getDB()[username];
+ if(!user||user.password!==pass){error.textContent='Incorrect username or password.';return}
+ currentUser=user;
+ localStorage.setItem(SESSION_KEY,username);
+ startApp();
+ showToast('Welcome back, '+user.name+'!');
+}
+function logout(){
+ saveUser();
+ currentUser=null;
+ localStorage.removeItem(SESSION_KEY);
+ clearInterval(timerInterval);
+ document.getElementById('app').classList.add('hidden');
+ document.getElementById('auth').classList.remove('hidden');
+ document.getElementById('loginUser').value='';
+ document.getElementById('loginPass').value='';
+ showLogin();
+}
+
+// ==========================================
+// DAILY LIST & 24-HOUR ROLLOVER
+// ==========================================
+
+function ensureUserData(){
+ if(!currentUser.history)currentUser.history=[];
+ if(!currentUser.moods)currentUser.moods={};
+ if(!currentUser.active){
+  const now=Date.now();
+  currentUser.active={id:uid(),createdAt:now,dueAt:now+PERIOD,tasks:[]};
+ }
+ if(!Array.isArray(currentUser.active.tasks))currentUser.active.tasks=[];
+}
+
+function isComplete(tasks){
+ return tasks.length>0&&tasks.every(t=>t.done);
+}
+function archiveActive(){
+ const a=currentUser.active;
+ currentUser.history.push({
+  id:a.id,createdAt:a.createdAt,dueAt:a.dueAt,
+  tasks:JSON.parse(JSON.stringify(a.tasks)),
+  completed:isComplete(a.tasks),
+  mood:currentUser.moods[dateString(a.createdAt)]||null
+ });
+}
+function rollover(){
+ const now=Date.now();
+ let count=0;
+ while(now>=currentUser.active.dueAt && count<3650){
+  const previous=currentUser.active;
+  archiveActive();
+  const nextStart=previous.dueAt;
+  currentUser.active={
+   id:uid(),
+   createdAt:nextStart,
+   dueAt:nextStart+PERIOD,
+   tasks:previous.tasks.map(t=>({id:uid(),text:t.text,done:false}))
+  };
+  count++;
+ }
+ if(count){
+  saveUser();
+  showToast(count===1?'Your new daily list is ready! ✦':count+' daily periods have passed. Your new list is ready.');
+ }
+}
+function addTask(){
+ const input=document.getElementById('newTask');
+ const text=input.value.trim();
+ if(!text)return showToast('Write a goal first!');
+ if(currentUser.active.tasks.length>=50)return showToast('Maximum 50 goals per day.');
+ currentUser.active.tasks.push({id:uid(),text,done:false});
+ input.value='';
+ saveUser();renderTasks();renderStats();
+ showToast('Goal added ✦');
+}
+function toggleTask(id,checked){
+ const t=currentUser.active.tasks.find(t=>t.id===id);
+ if(!t)return;
+ t.done=checked;
+ saveUser();renderTasks();renderStats();
+ if(isComplete(currentUser.active.tasks))showToast('Amazing! You completed all your goals! 🏆');
+}
+function deleteTask(id){
+ currentUser.active.tasks=currentUser.active.tasks.filter(t=>t.id!==id);
+ saveUser();renderTasks();renderStats();
+}
+function editTask(id){
+ const t=currentUser.active.tasks.find(t=>t.id===id);
+ if(!t)return;
+ openModal('Edit goal',`
+  <div class="field"><label>Goal name</label>
+  <input id="editTaskInput" maxlength="120" value="${escapeHTML(t.text)}"></div>
+  <button class="btn" style="width:100%" onclick="saveTaskEdit('${id}')">Save changes</button>
+ `);
+}
+function saveTaskEdit(id){
+ const t=currentUser.active.tasks.find(t=>t.id===id);
+ const value=document.getElementById('editTaskInput').value.trim();
+ if(!value)return showToast('Goal cannot be empty.');
+ if(t){t.text=value;saveUser();renderTasks();closeModal();showToast('Goal updated.')}
+}
+
+// Edit the most recent archived list, without changing today's list.
+function editLast(){
+ const history=currentUser.history;
+ if(!history.length)return showToast('You do not have a previous list yet.');
+ const item=history[history.length-1];
+ openModal('Edit your last list',`
+  <p class="muted small" style="margin-bottom:15px">${niceDate(item.createdAt)}</p>
+  <div id="oldEditRows"></div>
+  <div class="field" style="margin-top:15px">
+   <label>Add a goal</label>
+   <input id="oldNewTask" maxlength="120" placeholder="Write a new goal...">
+  </div>
+  <button class="btn" style="width:100%" onclick="saveOldList('${item.id}')">Save previous list</button>
+  <p class="muted small" style="margin-top:12px">This only edits your previous saved list. Today's timer and goals will not change.</p>
+ `);
+ renderOldRows(item);
+}
+function renderOldRows(item){
+ const el=document.getElementById('oldEditRows');
+ if(!el)return;
+ el.innerHTML='';
+ item.tasks.forEach((t,i)=>{
+  const row=document.createElement('div');
+  row.style.cssText='display:flex;gap:8px;margin-bottom:9px;align-items:center';
+  const input=document.createElement('input');
+  input.value=t.text;input.maxLength=120;input.style.flex='1';
+  input.dataset.index=i;
+  const del=document.createElement('button');
+  del.className='btn danger smallbtn';del.textContent='✕';
+  del.onclick=()=>{item.tasks.splice(i,1);renderOldRows(item)};
+  row.append(input,del);el.append(row);
+ });
+}
+function saveOldList(id){
+ const item=currentUser.history.find(h=>h.id===id);
+ if(!item)return;
+ const rows=[...document.querySelectorAll('#oldEditRows input')];
+ const newTasks=rows.map(input=>({
+  id:uid(),text:input.value.trim(),done:false
+ })).filter(t=>t.text);
+ const extra=document.getElementById('oldNewTask').value.trim();
+ if(extra)newTasks.push({id:uid(),text:extra,done:false});
+ item.tasks=newTasks;
+ item.completed=isComplete(newTasks);
+ saveUser();closeModal();renderAll();
+ showToast('Previous list updated.');
+}
+
+// ==========================================
+// TIMER
+// ==========================================
+
+function formatTime(ms){
+ const seconds=Math.max(0,Math.floor(ms/1000));
+ const h=Math.floor(seconds/3600);
+ const m=Math.floor((seconds%3600)/60);
+ const s=seconds%60;
+ return [h,m,s].map(n=>String(n).padStart(2,'0')).join(':');
+}
+function updateTimer(){
+ if(!currentUser)return;
+ rollover();
+ const a=currentUser.active;
+ const remaining=Math.max(0,a.dueAt-Date.now());
+ const elapsed=Math.max(0,Date.now()-a.createdAt);
+ const progress=Math.min(100,(elapsed/PERIOD)*100);
+ const formatted=formatTime(remaining);
+ document.getElementById('countdown').textContent=formatted;
+ document.getElementById('taskCountdown').textContent=formatted;
+ document.getElementById('timerProgress').style.width=progress+'%';
+ document.getElementById('timerCaption').textContent=
+  remaining===0?'Starting your next list...':'Your next list starts automatically when the timer reaches zero.';
+}
+
+// ==========================================
+// RENDER TASKS
+// ==========================================
+
+function renderTasks(){
+ const list=document.getElementById('taskList');
+ const empty=document.getElementById('taskEmpty');
+ list.innerHTML='';
+ const tasks=currentUser.active.tasks;
+ empty.classList.toggle('hidden',tasks.length>0);
+ tasks.forEach(t=>{
+  const row=document.createElement('div');
+  row.className='task'+(t.done?' done':'');
+  const checkbox=document.createElement('input');
+  checkbox.type='checkbox';checkbox.className='taskcheck';
+  checkbox.checked=t.done;
+  checkbox.onchange=()=>toggleTask(t.id,checkbox.checked);
+  const name=document.createElement('div');
+  name.className='taskname';name.textContent=t.text;
+  const actions=document.createElement('div');
+  actions.className='taskactions';
+  const edit=document.createElement('button');
+  edit.className='iconbtn';edit.textContent='✎';edit.title='Edit';
+  edit.onclick=()=>editTask(t.id);
+  const del=document.createElement('button');
+  del.className='iconbtn';del.textContent='✕';del.title='Delete';
+  del.onclick=()=>deleteTask(t.id);
+  actions.append(edit,del);
+  row.append(checkbox,name,actions);
+  list.append(row);
+ });
+ const done=tasks.filter(t=>t.done).length;
+ const pct=tasks.length?Math.round(done/tasks.length*100):0;
+ document.getElementById('taskProgress').style.width=pct+'%';
+ document.getElementById('taskPercent').textContent=pct+'% completed · '+done+' of '+tasks.length+' goals';
+ document.getElementById('taskDate').textContent=niceDate(currentUser.active.createdAt);
+}
+
+// ==========================================
+// STREAKS & STATISTICS
+// ==========================================
+
+function completedDays(){
+ return currentUser.history.filter(h=>h.completed).length;
+}
+function streaks(){
+ const history=[...currentUser.history].sort((a,b)=>a.createdAt-b.createdAt);
+ let best=0,run=0;
+ history.forEach(h=>{
+  if(h.completed)run++;
+  else run=0;
+  best=Math.max(best,run);
+ });
+ let streak=0;
+ for(let i=history.length-1;i>=0;i--){
+  if(history[i].completed)streak++;
+  else break;
+ }
+ // Count today's active list as part of a current streak if complete.
+ if(isComplete(currentUser.active.tasks))streak++;
+ best=Math.max(best,streak,currentUser.bestStreak||0);
+ currentUser.bestStreak=best;
+ return {streak,best};
+}
+function totalDone(){
+ let n=currentUser.active.tasks.filter(t=>t.done).length;
+ currentUser.history.forEach(h=>n+=h.tasks.filter(t=>t.done).length);
+ return n;
+}
+function renderStats(){
+ const {streak,best}=streaks();
+ const total=totalDone();
+ const days=currentUser.history.length+1;
+ const successful=completedDays()+(isComplete(currentUser.active.tasks)?1:0);
+ document.getElementById('dashStreak').textContent=streak;
+ document.getElementById('dashBest').textContent=best;
+ document.getElementById('dashDone').textContent=total;
+ document.getElementById('dashDays').textContent=days;
+ document.getElementById('statStreak').textContent=streak;
+ document.getElementById('statBest').textContent=best;
+ document.getElementById('statTasks').textContent=total;
+ document.getElementById('statCompleted').textContent=successful;
+ const tasks=currentUser.active.tasks;
+ const done=tasks.filter(t=>t.done).length;
+ const pct=tasks.length?Math.round(done/tasks.length*100):0;
+ document.getElementById('dashPercent').textContent=pct+'%';
+ document.getElementById('dashProgress').style.width=pct+'%';
+ document.getElementById('dashTaskText').textContent=tasks.length?done+' of '+tasks.length+' goals completed.': 'Start adding your goals!';
+ const achievements=[
+  ['🌱','First step','Create your first goal.',tasks.length>0||currentUser.history.length>0],
+  ['🔥','3-day streak','Complete 3 daily lists in a row.',best>=3],
+  ['🏅','7-day streak','Complete 7 daily lists in a row.',best>=7],
+  ['💎','30-day streak','Complete 30 daily lists in a row.',best>=30],
+  ['⭐','Goal getter','Complete 10 goals.',total>=10],
+  ['👑','Century club','Complete 100 goals.',total>=100]
+ ];
+ document.getElementById('achievements').innerHTML=achievements.map(a=>`
+  <div class="stat" style="padding:13px;opacity:${a[3]?1:.45}">
+   <div style="font-size:22px">${a[0]}</div>
+   <b style="font-size:13px">${a[1]}</b>
+   <div class="muted small" style="margin-top:5px">${a[2]}</div>
+   <div class="small" style="margin-top:7px;color:${a[3]?'#72dfac':'#9290a8'}">${a[3]?'✓ Unlocked':'🔒 Locked'}</div>
+  </div>`).join('');
+ saveUser();
+}
+
+// ==========================================
+// WEEKLY CHART
+// ==========================================
+
+function renderWeek(){
+ const now=new Date();
+ const days=[];
+ for(let i=6;i>=0;i--){
+  const d=new Date(now);d.setHours(0,0,0,0);d.setDate(d.getDate()-i);
+  days.push(d);
+ }
+ const records=[...currentUser.history];
+ document.getElementById('weekChart').innerHTML=days.map(d=>{
+  const key=dateString(d.getTime());
+  const record=records.find(h=>dateString(h.createdAt)===key);
+  const isCurrent=key===dateString();
+  let pct=0;
+  if(record)pct=record.tasks.length?record.tasks.filter(t=>t.done).length/record.tasks.length*100:0;
+  else if(isCurrent){
+   const t=currentUser.active.tasks;
+   pct=t.length?t.filter(x=>x.done).length/t.length*100:0;
+  }
+  return `<div class="weekcol">
+   <div class="weeknum">${Math.round(pct)}%</div>
+   <div class="weektrack"><div class="weekfill" style="height:${pct}%"></div></div>
+   <div class="weekday">${d.toLocaleDateString(undefined,{weekday:'short'})}</div>
+  </div>`;
+ }).join('');
+}
+
+// ==========================================
+// HISTORY & CALENDAR
+// ==========================================
+
+function renderHistory(){
+ const history=[...currentUser.history].sort((a,b)=>b.createdAt-a.createdAt);
+ const el=document.getElementById('historyList');
+ el.innerHTML='';
+ document.getElementById('historyEmpty').classList.toggle('hidden',history.length>0);
+ history.forEach(h=>{
+  const done=h.tasks.filter(t=>t.done).length;
+  const total=h.tasks.length;
+  const row=document.createElement('div');
+  row.className='historyitem';
+  const left=document.createElement('div');
+  left.innerHTML=`<div class="historydate">${niceDate(h.createdAt)}</div><div class="historymeta">${done}/${total} goals completed</div>`;
+  const right=document.createElement('div');
+  right.style.cssText='display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end';
+  const status=document.createElement('span');
+  status.className='status '+(h.completed?'complete':'missed');
+  status.textContent=h.completed?'✓ Completed':'Not completed';
+  const edit=document.createElement('button');
+  edit.className='btn secondary smallbtn';
+  edit.textContent='Edit';
+  edit.onclick=()=>editHistoryById(h.id);
+  right.append(status,edit);
+  row.append(left,right);el.append(row);
+ });
+ renderCalendar();
+}
+function editHistoryById(id){
+ const item=currentUser.history.find(h=>h.id===id);
+ if(!item)return;
+ openModal('Edit previous list',`
+  <p class="muted small" style="margin-bottom:15px">${niceDate(item.createdAt)}</p>
+  <div id="historyEditRows"></div>
+  <div class="field" style="margin-top:15px"><label>Add a goal</label><input id="historyNewTask" maxlength="120" placeholder="Write a new goal..."></div>
+  <button class="btn" style="width:100%" onclick="saveHistoryEdit('${id}')">Save changes</button>
+ `);
+ const el=document.getElementById('historyEditRows');
+ item.tasks.forEach((t,i)=>{
+  const row=document.createElement('div');
+  row.style.cssText='display:flex;gap:8px;margin-bottom:9px;align-items:center';
+  const input=document.createElement('input');
+  input.value=t.text;input.maxLength=120;
+  const del=document.createElement('button');
+  del.className='btn danger smallbtn';del.textContent='✕';
+  del.onclick=()=>{item.tasks.splice(i,1);editHistoryById(id)};
+  row.append(input,del);el.append(row);
+ });
+}
+function saveHistoryEdit(id){
+ const item=currentUser.history.find(h=>h.id===id);
+ if(!item)return;
+ const rows=[...document.querySelectorAll('#historyEditRows input')];
+ const tasks=rows.map((x,i)=>({
+  id:uid(),text:x.value.trim(),
+  done:item.tasks[i]?.done||false
+ })).filter(t=>t.text);
+ const extra=document.getElementById('historyNewTask').value.trim();
+ if(extra)tasks.push({id:uid(),text:extra,done:false});
+ item.tasks=tasks;
+ item.completed=isComplete(tasks);
+ saveUser();closeModal();renderAll();showToast('History updated.');
+}
+function renderCalendar(){
+ const now=new Date();
+ const year=now.getFullYear(),month=now.getMonth();
+ const first=new Date(year,month,1).getDay();
+ const total=new Date(year,month+1,0).getDate();
+ document.getElementById('calendarMonth').textContent=now.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+ const el=document.getElementById('calendar');
+ el.innerHTML='';
+ ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(x=>{
+  const d=document.createElement('div');d.className='muted small';d.style.textAlign='center';d.textContent=x;el.append(d);
+ });
+ for(let i=0;i<first;i++){const d=document.createElement('div');el.append(d)}
+ for(let day=1;day<=total;day++){
+  const key=dateString(new Date(year,month,day).getTime());
+  const h=currentUser.history.find(x=>dateString(x.createdAt)===key);
+  const isToday=key===dateString();
+  const d=document.createElement('div');
+  d.className='calday'+(h?(h.completed?' complete':' missed'):'')+(isToday?' today':'');
+  d.textContent=day;d.title=h?(h.completed?'Completed':'Not completed'):(isToday?'Today':'No saved list');
+  el.append(d);
+ }
+}
+
+// ==========================================
+// MOOD & QUOTES
+// ==========================================
+
+function setMood(name,emoji,button){
+ currentUser.moods[dateString()]={name,emoji};
+ saveUser();
+ document.querySelectorAll('.mood').forEach(b=>b.classList.remove('selected'));
+ button.classList.add('selected');
+ document.getElementById('moodMessage').textContent='Mood saved: '+emoji+' '+name;
+ showToast('Mood saved ✦');
+}
+function renderMood(){
+ const m=currentUser.moods[dateString()];
+ document.querySelectorAll('.mood').forEach(b=>{
+  b.classList.toggle('selected',!!m&&b.textContent.includes(m.name));
+ });
+ document.getElementById('moodMessage').textContent=m?'Mood saved: '+m.emoji+' '+m.name:'Your mood is private. Choose how you feel.';
+}
+function newQuote(){
+ quoteIndex=(quoteIndex+1)%quotes.length;
+ document.getElementById('quote').textContent='"'+quotes[quoteIndex]+'"';
+}
+
+// ==========================================
+// PROFILE
+// ==========================================
+
+function renderProfile(){
+ const u=currentUser;
+ const initial=u.name.trim().charAt(0).toUpperCase()||'B';
+ document.getElementById('topUsername').textContent=u.name;
+ document.getElementById('avatar').textContent=initial;
+ document.getElementById('profileAvatar').textContent=initial;
+ document.getElementById('profileName').textContent=u.name;
+ document.getElementById('profileUsername').textContent='@'+u.username;
+ document.getElementById('joinDate').textContent='Member since '+niceDate(u.joinedAt);
+ document.getElementById('infoName').textContent=u.name;
+ document.getElementById('infoUsername').textContent='@'+u.username;
+ document.getElementById('infoDate').textContent=new Date(u.joinedAt).toLocaleDateString();
+ document.getElementById('infoLists').textContent=u.history.length+1;
+}
+function openEditProfile(){
+ openModal('Edit your profile',`
+  <div class="field"><label>Your name</label><input id="profileEditName" maxlength="40" value="${escapeHTML(currentUser.name)}"></div>
+  <button class="btn" style="width:100%" onclick="saveProfile()">Save profile</button>
+ `);
+}
+function saveProfile(){
+ const name=document.getElementById('profileEditName').value.trim();
+ if(!name)return showToast('Name cannot be empty.');
+ currentUser.name=name;saveUser();renderProfile();closeModal();
+ showToast('Profile updated.');
+}
+
+// ==========================================
+// NAVIGATION & RENDERING
+// ==========================================
+
+function go(page){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(page).classList.add('active');
+ document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.page===page));
+ if(page==='history')renderHistory();
+ if(page==='statistics'){renderStats();renderWeek()}
+ if(page==='profile')renderProfile();
+}
+function renderAll(){
+ if(!currentUser)return;
+ ensureUserData();
+ document.getElementById('todayDate').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+ const hour=new Date().getHours();
+ const greeting=hour<12?'Good morning':hour<17?'Good afternoon':'Good evening';
+ document.getElementById('greeting').textContent=greeting+', '+currentUser.name.split(' ')[0]+'!';
+ renderTasks();
+ renderStats();
+ renderProfile();
+ renderHistory();
+ renderWeek();
+ renderMood();
+}
+function startApp(){
+ ensureUserData();
+ rollover();
+ document.getElementById('auth').classList.add('hidden');
+ document.getElementById('app').classList.remove('hidden');
+ go('dashboard');
+ renderAll();
+ quoteIndex=Math.floor(Math.random()*quotes.length);
+ document.getElementById('quote').textContent='"'+quotes[quoteIndex]+'"';
+ clearInterval(timerInterval);
+ updateTimer();
+ timerInterval=setInterval(()=>{
+  if(!currentUser)return;
+  const oldLength=currentUser.history.length;
+  updateTimer();
+  if(oldLength!==currentUser.history.length)renderAll();
+ },1000);
+}
+
+// ==========================================
+// MODAL
+// ==========================================
+
+function openModal(title,content){
+ document.getElementById('modalTitle').textContent=title;
+ document.getElementById('modalContent').innerHTML=content;
+ document.getElementById('modalBg').classList.remove('hidden');
+}
+function closeModal(){document.getElementById('modalBg').classList.add('hidden')}
+
+// ==========================================
+// INITIALIZE
+// ==========================================
+
+(function init(){
+ const username=localStorage.getItem(SESSION_KEY);
+ if(username){
+  const user=getDB()[username];
+  if(user){
+   currentUser=user;
+   startApp();
+   return;
+  }
+  localStorage.removeItem(SESSION_KEY);
+ }
+ document.getElementById('auth').classList.remove('hidden');
+ document.getElementById('app').classList.add('hidden');
+})();
+</script>
+</body>
+</html>
